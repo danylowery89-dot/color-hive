@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Color Hive</title>
+<link rel="stylesheet" href="css/style.css">
+<!-- Pikabu Games SDK -->
+<script src="https://games.pikabu.ru/sdk/sdk.js"></script>
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<!-- Загрузка -->
+<div id="loading" class="screen show">
+  <div class="loader"><div class="lh lh1"></div><div class="lh lh2"></div><div class="lh lh3"></div></div>
+</div>
+
+<!-- Главное меню -->
+<div id="menu" class="screen">
+  <div class="topbar">
+    <div class="coins"><i class="coin"></i><span class="coinsVal">0</span></div>
+    <button class="icon-btn" id="btnSettings" data-icon="gear"></button>
+  </div>
+  <div class="menu-center">
+    <div class="logo">
+      <canvas id="logoCanvas"></canvas>
+      <h1 data-i18n="title"></h1>
+      <div class="subtitle" data-i18n="subtitle"></div>
+    </div>
+    <div class="menu-buttons">
+      <button class="btn btn-green big pulse" id="btnPlay">
+        <span class="btn-title" data-i18n="play"></span>
+        <span class="btn-sub" id="playSub"></span>
+      </button>
+      <button class="btn btn-blue mode" id="btnLevels">
+        <span class="mode-ico" data-icon="grid"></span>
+        <span class="mode-text"><span class="btn-title" data-i18n="levels"></span><span class="btn-sub" id="levelsSub"></span></span>
+      </button>
+      <button class="btn btn-purple mode" id="btnEndless">
+        <span class="mode-ico" data-icon="infinity"></span>
+        <span class="mode-text"><span class="btn-title" data-i18n="endless"></span><span class="btn-sub" id="endlessSub"></span></span>
+      </button>
+      <button class="btn btn-orange mode" id="btnDaily">
+        <span class="mode-ico" data-icon="calendar"></span>
+        <span class="mode-text"><span class="btn-title" data-i18n="daily"></span><span class="btn-sub" id="dailySub"></span></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Выбор уровня -->
+<div id="levels" class="screen">
+  <div class="topbar">
+    <button class="icon-btn" id="btnLevelsBack" data-icon="back"></button>
+    <h2 data-i18n="levels"></h2>
+    <div class="coins"><i class="coin"></i><span class="coinsVal">0</span></div>
+  </div>
+  <div class="level-scroll"><div class="level-grid" id="levelGrid"></div></div>
+</div>
+
+<!-- Игровой HUD -->
+<div id="hud" class="screen">
+  <div class="hud-top">
+    <button class="icon-btn" id="btnPause" data-icon="pause"></button>
+    <div class="goal">
+      <div class="goal-title" id="hudTitle"></div>
+      <div class="bar"><div class="fill" id="hudFill"></div><span id="hudProgress"></span></div>
+    </div>
+    <div class="coins small"><i class="coin"></i><span class="coinsVal">0</span></div>
+  </div>
+  <div class="booster-hint" id="boosterHint"><span id="boosterHintText"></span><button class="btn btn-red tiny" id="btnBoosterCancel" data-i18n="cancel"></button></div>
+  <div class="hud-bottom">
+    <button class="booster" data-b="hammer"><span class="b-ico" data-icon="hammer"></span><span class="badge"></span></button>
+    <button class="booster" data-b="move"><span class="b-ico" data-icon="move"></span><span class="badge"></span></button>
+    <button class="booster" data-b="shuffle"><span class="b-ico" data-icon="shuffle"></span><span class="badge"></span></button>
+  </div>
+</div>
+
+<div id="modalLayer"></div>
+<div id="toast"></div>
+<div id="adMock"><div><b>РЕКЛАМА (тест)</b><span>Здесь будет реклама</span></div></div>
+
+<script src="js/utils.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/psdk.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/render.js"></script>
+<script src="js/game.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
