@@ -6,7 +6,8 @@ const TH = 0.2;       // толщина плитки относительно е
 const TILE = 0.86;    // радиус плитки относительно ячейки
 const FONT = '"Nunito","Varela Round","Segoe UI Rounded","Trebuchet MS","Segoe UI",Arial,sans-serif';
 
-const PALETTE = ['#ff4f64', '#ff9524', '#ffd02e', '#45cf63', '#1fc2c9', '#3a78ff', '#9b5bff', '#ff68c4'];
+// цвета разнесены по тону и яркости, чтобы соседние (синий/фиолетовый, зелёный/голубой) не путались
+const PALETTE = ['#ff3347', '#ff8a1c', '#ffe14a', '#2fb52f', '#5ee6f2', '#1747e6', '#bb55ff', '#ffa3e0'];
 const COLS = PALETTE.map(h => ({
   base: h,
   light: U.shade(h, 0.28),
